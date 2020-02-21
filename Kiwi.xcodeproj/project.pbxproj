@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A23A3B8723E243A10041619D /* AnimalDetectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23A3B8623E243A10041619D /* AnimalDetectorController.swift */; };
 		A28495FD23E0E45D002CD7F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28495FC23E0E45D002CD7F7 /* AppDelegate.swift */; };
 		A28495FF23E0E45D002CD7F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28495FE23E0E45D002CD7F7 /* SceneDelegate.swift */; };
 		A284960123E0E45D002CD7F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A284960023E0E45D002CD7F7 /* ViewController.swift */; };
 		A284960423E0E45D002CD7F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A284960223E0E45D002CD7F7 /* Main.storyboard */; };
 		A284960623E0E461002CD7F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A284960523E0E461002CD7F7 /* Assets.xcassets */; };
 		A284960923E0E461002CD7F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A284960723E0E461002CD7F7 /* LaunchScreen.storyboard */; };
+		A284961423E0E8D5002CD7F7 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A284961323E0E8D5002CD7F7 /* CameraController.swift */; };
+		A284961623E0EA63002CD7F7 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A284961523E0EA63002CD7F7 /* CameraModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A23A3B8623E243A10041619D /* AnimalDetectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetectorController.swift; sourceTree = "<group>"; };
 		A28495F923E0E45D002CD7F7 /* Kiwi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiwi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28495FC23E0E45D002CD7F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A28495FE23E0E45D002CD7F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		A284960523E0E461002CD7F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A284960823E0E461002CD7F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A284960A23E0E461002CD7F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A284961323E0E8D5002CD7F7 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		A284961523E0EA63002CD7F7 /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +64,40 @@
 			children = (
 				A28495FC23E0E45D002CD7F7 /* AppDelegate.swift */,
 				A28495FE23E0E45D002CD7F7 /* SceneDelegate.swift */,
-				A284960023E0E45D002CD7F7 /* ViewController.swift */,
-				A284960223E0E45D002CD7F7 /* Main.storyboard */,
+				A284961023E0E483002CD7F7 /* Model */,
+				A284961123E0E48C002CD7F7 /* View */,
+				A284961223E0E493002CD7F7 /* Controller */,
 				A284960523E0E461002CD7F7 /* Assets.xcassets */,
 				A284960723E0E461002CD7F7 /* LaunchScreen.storyboard */,
 				A284960A23E0E461002CD7F7 /* Info.plist */,
 			);
 			path = Kiwi;
+			sourceTree = "<group>";
+		};
+		A284961023E0E483002CD7F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A284961523E0EA63002CD7F7 /* CameraModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A284961123E0E48C002CD7F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A284960223E0E45D002CD7F7 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A284961223E0E493002CD7F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A284960023E0E45D002CD7F7 /* ViewController.swift */,
+				A284961323E0E8D5002CD7F7 /* CameraController.swift */,
+				A23A3B8623E243A10041619D /* AnimalDetectorController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +172,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A284960123E0E45D002CD7F7 /* ViewController.swift in Sources */,
+				A23A3B8723E243A10041619D /* AnimalDetectorController.swift in Sources */,
 				A28495FD23E0E45D002CD7F7 /* AppDelegate.swift in Sources */,
+				A284961623E0EA63002CD7F7 /* CameraModel.swift in Sources */,
+				A284961423E0E8D5002CD7F7 /* CameraController.swift in Sources */,
 				A28495FF23E0E45D002CD7F7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5U7DQR6YGY;
 				INFOPLIST_FILE = Kiwi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5U7DQR6YGY;
 				INFOPLIST_FILE = Kiwi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
