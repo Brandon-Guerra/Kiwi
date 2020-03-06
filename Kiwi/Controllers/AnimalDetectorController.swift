@@ -9,7 +9,7 @@
 import UIKit
 import Vision
 
-protocol AnimalDetectorControllerDelegate {
+protocol AnimalDetectorControllerDelegate: class {
     func didDetect(_ animalDetectorController: AnimalDetectorController)
 }
 
@@ -18,7 +18,7 @@ class AnimalDetectorController {
     
     var detectionString: String?
     
-    var delegate: AnimalDetectorControllerDelegate?
+    weak var delegate: AnimalDetectorControllerDelegate?
     
     private let animalRecognitionWorkQueue = DispatchQueue(label: "PetClassifierRequest", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
     

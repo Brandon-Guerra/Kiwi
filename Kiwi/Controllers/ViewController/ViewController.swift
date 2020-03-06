@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     let animalDetectorController = AnimalDetectorController()
     let cameraController = CameraController()
+    var captureImage: UIImage?
     
     @IBOutlet weak var captureButton: UIButton!
     
@@ -31,11 +32,14 @@ class ViewController: UIViewController {
                 return
             }
             self.animalDetectorController.processImage(image)
-
+            self.captureImage = image
+            let previewImageView = PreviewImageController(nibName: "PreviewImageController", bundle: nil)
+            previewImageView.image = image;
+            self.navigationController!.pushViewController(previewImageView, animated: true)
             // this will try to save to camera roll
-            try? PHPhotoLibrary.shared().performChangesAndWait {
-                PHAssetChangeRequest.creationRequestForAsset(from: image)
-            }
+//            try? PHPhotoLibrary.shared().performChangesAndWait {
+//                PHAssetChangeRequest.creationRequestForAsset(from: image)
+//            }
         }
     }
     
@@ -69,11 +73,11 @@ class ViewController: UIViewController {
                     return
                 }
                 self.animalDetectorController.processImage(image)
-                if (self.animalDetectorController.detectionString != "Neither cat nor dog") {
-                    try? PHPhotoLibrary.shared().performChangesAndWait {
-                        PHAssetChangeRequest.creationRequestForAsset(from: image)
-                    }
-                }
+//                if (self.animalDetectorController.detectionString != "Neither cat nor dog") {
+//                    try? PHPhotoLibrary.shared().performChangesAndWait {
+//                        PHAssetChangeRequest.creationRequestForAsset(from: image)
+//                    }
+//                }
             }
         }
     }
@@ -83,6 +87,7 @@ class ViewController: UIViewController {
 
 extension ViewController {
     override func viewDidLoad() {
+        self.navigationController?.navigationBar.isHidden = true
         func configureCameraController() {
             cameraController.prepare {(error) in
                 if let error = error {
@@ -96,7 +101,6 @@ extension ViewController {
         animalDetectorController.setupVision()
         super.viewDidLoad()
         animalDetectorController.delegate = self
-//        cameraController.delegate = self
     }
 }
 
@@ -105,13 +109,3 @@ extension ViewController: AnimalDetectorControllerDelegate {
         self.label.text = animalDetectorController.detectionString
     }
 }
-
-//extension ViewController: DepthDisplayDelegate {
-//    func displayDepth(_ cameraController: CameraController) {
-//        let image = self.cameraController.depthDataImage
-//        let imageView = UIImageView(image: image!)
-//        imageView.frame = UIScreen.main.bounds
-//        self.view.insertSubview(imageView, at: 0)
-//        self.view.bringSubviewToFront(imageView)
-//    }
-//}
