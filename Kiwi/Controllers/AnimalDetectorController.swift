@@ -9,7 +9,7 @@
 import UIKit
 import Vision
 
-protocol AnimalDetectorControllerDelegate: class {
+protocol AnimalDetectorControllerDelegate: AnyObject {
     func didDetect(_ animalDetectorController: AnimalDetectorController)
 }
 
@@ -44,8 +44,7 @@ class AnimalDetectorController {
                                 animalLabel = "🐶"
                             }
                             
-                            let string = "#\(animalCount) \(animal.identifier) \(animalLabel)"
-//                            confidence is \(animal.confidence)\n
+                            let string = "#\(animalCount) \(animal.identifier) \(animalLabel) confidence is \(animal.confidence)\n"
                             detectionString = detectionString + string
                         }
                     }

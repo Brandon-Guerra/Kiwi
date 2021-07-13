@@ -17,7 +17,7 @@ class PreviewImageController: UIViewController {
         
         func runSegmentation(_ image: UIImage) {
             DispatchQueue(label: "segmentation").async {
-                let outputTensor: TfLiteTensor
+//                let outputTensor: TfLiteTensor
                 
                 do {
                     // look at rgbData stuff on line 201 from https://github.com/tensorflow/examples/blob/master/lite/examples/image_segmentation/ios/ImageSegmentation/ImageSegmentator.swift

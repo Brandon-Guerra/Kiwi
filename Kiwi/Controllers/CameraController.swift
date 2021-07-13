@@ -128,8 +128,8 @@ extension CameraController {
         captureSession.sessionPreset = AVCaptureSession.Preset.photo
          
         func switchToFrontCamera() throws {
-            guard let inputs = captureSession.inputs as? [AVCaptureInput], let rearCameraInput = self.rearCameraInput, inputs.contains(rearCameraInput),
-                   let frontCamera = self.frontCamera else { throw CameraControllerError.invalidOperation }
+            let inputs = captureSession.inputs
+            guard let rearCameraInput = self.rearCameraInput, inputs.contains(rearCameraInput), let frontCamera = self.frontCamera else { throw CameraControllerError.invalidOperation }
             
                self.frontCameraInput = try AVCaptureDeviceInput(device: frontCamera)
             
@@ -139,25 +139,21 @@ extension CameraController {
                    captureSession.addInput(self.frontCameraInput!)
             
                    self.currentCameraPosition = .front
-               }
-            
-               else { throw CameraControllerError.invalidOperation }
+               } else { throw CameraControllerError.invalidOperation }
         }
         func switchToRearCamera() throws {
-            guard let inputs = captureSession.inputs as? [AVCaptureInput], let frontCameraInput = self.frontCameraInput, inputs.contains(frontCameraInput),
-                   let rearCamera = self.rearCamera else { throw CameraControllerError.invalidOperation }
+            let inputs = captureSession.inputs
+            guard let frontCameraInput = self.frontCameraInput, let rearCamera = self.rearCamera, inputs.contains(frontCameraInput) else { throw CameraControllerError.invalidOperation }
             
-               self.rearCameraInput = try AVCaptureDeviceInput(device: rearCamera)
+            self.rearCameraInput = try AVCaptureDeviceInput(device: rearCamera)
             
-               captureSession.removeInput(frontCameraInput)
+            captureSession.removeInput(frontCameraInput)
             
-               if captureSession.canAddInput(self.rearCameraInput!) {
-                   captureSession.addInput(self.rearCameraInput!)
-            
-                   self.currentCameraPosition = .rear
-               }
-            
-               else { throw CameraControllerError.invalidOperation }
+           if captureSession.canAddInput(self.rearCameraInput!) {
+               captureSession.addInput(self.rearCameraInput!)
+        
+               self.currentCameraPosition = .rear
+           } else { throw CameraControllerError.invalidOperation }
         }
         
         switch currentCameraPosition {

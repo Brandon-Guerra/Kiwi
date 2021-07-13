@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D1A39EB1D14208901E9A251 /* Pods_Kiwi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702036E377600B7094FD079F /* Pods_Kiwi.framework */; };
 		A23A3B8723E243A10041619D /* AnimalDetectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23A3B8623E243A10041619D /* AnimalDetectorController.swift */; };
 		A28495FD23E0E45D002CD7F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28495FC23E0E45D002CD7F7 /* AppDelegate.swift */; };
 		A284960123E0E45D002CD7F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A284960023E0E45D002CD7F7 /* ViewController.swift */; };
@@ -23,7 +22,6 @@
 /* Begin PBXFileReference section */
 		098E5C4CE83C4B02A041791F /* Pods-Kiwi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwi.debug.xcconfig"; path = "Target Support Files/Pods-Kiwi/Pods-Kiwi.debug.xcconfig"; sourceTree = "<group>"; };
 		19D57F5DC752B4F0EA52595B /* Pods-Kiwi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwi.release.xcconfig"; path = "Target Support Files/Pods-Kiwi/Pods-Kiwi.release.xcconfig"; sourceTree = "<group>"; };
-		702036E377600B7094FD079F /* Pods_Kiwi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kiwi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A23A3B8623E243A10041619D /* AnimalDetectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetectorController.swift; sourceTree = "<group>"; };
 		A28495F923E0E45D002CD7F7 /* Kiwi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiwi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28495FC23E0E45D002CD7F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D1A39EB1D14208901E9A251 /* Pods_Kiwi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,21 +56,12 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		77593112603C2F30A71F773B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				702036E377600B7094FD079F /* Pods_Kiwi.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		A28495F023E0E45D002CD7F7 = {
 			isa = PBXGroup;
 			children = (
 				A28495FB23E0E45D002CD7F7 /* Kiwi */,
 				A28495FA23E0E45D002CD7F7 /* Products */,
 				11EC9254F96D6896C7B92D0B /* Pods */,
-				77593112603C2F30A71F773B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,7 +151,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Brandon Guerra";
 				TargetAttributes = {
 					A28495F823E0E45D002CD7F7 = {
@@ -282,6 +270,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -342,6 +331,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     }
     
     func startCaptureSession() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             self.cameraController.captureImage {(image, error) in
                 guard let image = image else {
                     print(error ?? "Image capture error")
@@ -101,6 +101,7 @@ extension ViewController {
         animalDetectorController.setupVision()
         super.viewDidLoad()
         animalDetectorController.delegate = self
+        startCaptureSession()
     }
 }
 
